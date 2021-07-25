@@ -1,0 +1,36 @@
+{
+  "name": "mdf-vscode",
+  "version": "0.0.1",
+  "description": "mdf vscode plugin",
+  "engines": {
+		"vscode": "^1.58.0"
+	},
+  "main": "./dist/mdf.js",
+  "scripts": {
+    "build": "tsc -p ./",
+    "dev": "tsc -watch -p ./"
+  },
+  "activationEvents": [
+    "onCommand:extension.mdf"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.mdf",
+        "title": "run mdf"
+      }
+    ]
+  },
+  "repository": "git@github.com:aJean/mdf-vscode.git",
+  "author": "qy <30001677@qq.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^8.2.3",
+    "@types/node": "^16.4.2",
+    "@types/vscode": "^1.58.1",
+    "rollup": "^2.54.0"
+  },
+  "dependencies": {
+    "typescript": "^4.3.5"
+  }
+}
