@@ -1,0 +1,10 @@
+{
+  "scopeName": "mdf.comment.todo",
+  "injectionSelector": "L:comment.block.documentation.js",
+  "patterns": [
+    {
+      "match": "todo",
+      "name": "keyword.todo"
+    }
+  ]
+}

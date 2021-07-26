@@ -1,0 +1,40 @@
+{
+  "comments": {
+    // 行内注释
+    "lineComment": "//",
+    // 块级注释
+    "blockComment": [ "/*", "*/" ]
+  },
+  // 括号
+  "brackets": [
+    ["{", "}"],
+    ["[", "]"],
+    ["(", ")"]
+  ],
+  // 自动闭合
+  "autoClosingPairs": [
+		{ "open": "{", "close": "}" },
+		{ "open": "[", "close": "]" },
+		{ "open": "(", "close": ")" },
+		{ "open": "\"", "close": "\"", "notIn": ["string"] },
+		{ "open": "'", "close": "'", "notIn": ["string", "comment"] },
+		{ "open": "`", "close": "`", "notIn": ["string", "comment"] },
+		{ "open": "/**", "close": " */", "notIn": ["string"] }
+  ],
+  // 选区环绕
+  "surroundingPairs": [
+    ["{", "}"],
+    ["[", "]"],
+    ["(", ")"],
+    ["\"", "\""],
+    ["'", "'"],
+    ["`", "`"]
+  ],
+  // 代码折叠
+  "folding": {
+    "markers": {
+      "start": "^<(template|style|script)[^>]*>",
+      "end": "^</(template|style|script)>"
+    }
+  }
+}

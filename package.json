@@ -3,21 +3,56 @@
   "version": "0.0.1",
   "description": "mdf vscode plugin",
   "engines": {
-		"vscode": "^1.58.0"
-	},
+    "vscode": "^1.58.0"
+  },
   "main": "./dist/mdf.js",
   "scripts": {
     "build": "tsc -p ./",
     "dev": "tsc -watch -p ./"
   },
   "activationEvents": [
-    "onCommand:extension.mdf"
+    "onCommand:extension.mdf",
+    "onLanguage:mdf"
   ],
   "contributes": {
     "commands": [
       {
         "command": "extension.mdf",
         "title": "run mdf"
+      }
+    ],
+    "languages": [
+      {
+        "id": "mdf",
+        "aliases": [
+          "Mdf",
+          "mdf"
+        ],
+        "extensions": [
+          ".mdf"
+        ],
+        "configuration": "./languages/mdf-language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "mdf",
+        "scopeName": "source.mdf",
+        "path": "./syntaxes/mdf-tmLanguage.json",
+        "embeddedLanguages": {
+          "text.html.basic": "html",
+          "source.less": "less",
+          "source.css": "css",
+          "source.stylus": "stylus",
+          "source.js": "javascript",
+          "source.ts": "typescript",
+          "source.json": "json"
+        }
+      },
+      {
+        "scopeName":"mdf.comment.todo",
+        "path":"./syntaxes/injection.json",
+        "injectTo":["source.mdf"]
       }
     ]
   },
